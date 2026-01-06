@@ -11,7 +11,6 @@ import type {
   DocumentConfig,
   DocumentSelection,
 } from "../scenarios/types";
-import type { KanbanConfig, KanbanMoveResult } from "../canvases/kanban";
 
 export interface CanvasResult<T = unknown> {
   success: boolean;
@@ -216,33 +215,3 @@ export async function editDocument(
   );
 }
 
-// ============================================
-// Kanban Canvas API
-// ============================================
-
-/**
- * Display a kanban board (read-only view)
- * Shows tasks organized by status in columns
- */
-export async function displayKanban(
-  config: KanbanConfig,
-  options?: SpawnOptions
-): Promise<CanvasResult<void>> {
-  return spawnCanvasWithIPC("kanban", "display", config, options);
-}
-
-/**
- * Open interactive kanban board for task management
- * Returns when user moves a card between columns
- */
-export async function editKanban(
-  config: KanbanConfig,
-  options?: SpawnOptions
-): Promise<CanvasResult<KanbanMoveResult>> {
-  return spawnCanvasWithIPC<KanbanConfig, KanbanMoveResult>(
-    "kanban",
-    "edit",
-    config,
-    options
-  );
-}

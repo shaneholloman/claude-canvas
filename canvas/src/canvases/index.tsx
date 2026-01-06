@@ -3,10 +3,8 @@ import { render } from "ink";
 import { Calendar, type CalendarConfig } from "./calendar";
 import { Document } from "./document";
 import type { DocumentConfig } from "./document/types";
-import { Kanban, type KanbanConfig } from "./kanban";
 import { FlightCanvas } from "./flight";
 import type { FlightConfig } from "./flight/types";
-import { Imagine, type ImagineConfig } from "./imagine";
 
 // Clear screen and hide cursor
 function clearScreen() {
@@ -52,22 +50,10 @@ export async function renderCanvas(
         config as DocumentConfig | undefined,
         options
       );
-    case "kanban":
-      return renderKanban(
-        id,
-        config as KanbanConfig | undefined,
-        options
-      );
     case "flight":
       return renderFlight(
         id,
         config as FlightConfig | undefined,
-        options
-      );
-    case "imagine":
-      return renderImagine(
-        id,
-        config as ImagineConfig | undefined,
         options
       );
     default:
@@ -114,25 +100,6 @@ async function renderDocument(
   await waitUntilExit();
 }
 
-async function renderKanban(
-  id: string,
-  config?: KanbanConfig,
-  options?: RenderOptions
-): Promise<void> {
-  const { waitUntilExit } = render(
-    <Kanban
-      id={id}
-      config={config}
-      socketPath={options?.socketPath}
-      scenario={options?.scenario || "display"}
-    />,
-    {
-      exitOnCtrlC: true,
-    }
-  );
-  await waitUntilExit();
-}
-
 async function renderFlight(
   id: string,
   config?: FlightConfig,
@@ -144,25 +111,6 @@ async function renderFlight(
       config={config}
       socketPath={options?.socketPath}
       scenario={options?.scenario || "booking"}
-    />,
-    {
-      exitOnCtrlC: true,
-    }
-  );
-  await waitUntilExit();
-}
-
-async function renderImagine(
-  id: string,
-  config?: ImagineConfig,
-  options?: RenderOptions
-): Promise<void> {
-  const { waitUntilExit } = render(
-    <Imagine
-      id={id}
-      config={config}
-      socketPath={options?.socketPath}
-      scenario={options?.scenario || "generate"}
     />,
     {
       exitOnCtrlC: true,
