@@ -9,6 +9,16 @@ description: |
 
 Display calendar views and enable interactive meeting time selection.
 
+## Example Prompts
+
+Try asking Claude:
+
+- "Schedule a 30-minute meeting with Alice and Bob sometime next week"
+- "Find a time when the engineering team is all free on Tuesday"
+- "Show me my calendar for this week"
+- "When is everyone available for a 1-hour planning session?"
+- "Block off 2-4pm on Friday for focused work"
+
 ## Scenarios
 
 ### `display` (default)

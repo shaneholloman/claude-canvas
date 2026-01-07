@@ -9,6 +9,16 @@ description: |
 
 Cyberpunk-themed flight comparison and seat selection interface.
 
+## Example Prompts
+
+Try asking Claude:
+
+- "Find flights from San Francisco to Denver on January 15th"
+- "Book me a window seat on the cheapest nonstop to NYC"
+- "Compare morning flights from LAX to Seattle next Monday"
+- "I need a business class seat to Chicago with extra legroom"
+- "Show me United flights to Boston under $300"
+
 ## Scenarios
 
 ### `booking` (default)

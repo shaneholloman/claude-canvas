@@ -9,6 +9,22 @@ description: |
 
 **Start here when using terminal canvases.** This skill covers the overall workflow, canvas types, and IPC communication.
 
+## Example Prompts
+
+Try asking Claude things like:
+
+**Calendar:**
+- "Schedule a meeting with the team next week"
+- "Find a time when Alice and Bob are both free"
+
+**Document:**
+- "Draft an email to the sales team about the new feature"
+- "Help me edit this document — let me select what to change"
+
+**Flight:**
+- "Find flights from SFO to Denver next Friday"
+- "Book me a window seat on the morning flight"
+
 ## Overview
 
 Canvas provides interactive terminal displays (TUIs) that Claude can spawn and control. Each canvas type supports multiple scenarios for different interaction modes.
